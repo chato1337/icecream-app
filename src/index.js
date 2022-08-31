@@ -5,7 +5,7 @@ const $product = document.querySelector('#product')
 const $order = document.querySelector('#order')
 
 // variables initializacion
-let orders = []
+let orders = [] 
 
 //dom listeners
 $root.addEventListener('click', (event) => {
@@ -26,14 +26,19 @@ const addCart = (id) => {
 
     //check if prduct already exists in order list
     //replace with some method
-    const exist = orders.includes(prod => prod.id == product.id)
+    const exist = orders.some(prod => prod.id == product.id)
 
     if (exist) {
         //accumulate amount and price
         const orderExist = orders.find(order => order.id == product.id)
-        const accOrderProduct = OrderProduct(product, orderExist.amount+1)
+        const accAmount = orderExist.amount+1
+        const accSubtotal = orderExist.price * accAmount
+        const accOrderProduct = OrderProduct(product, accAmount, accSubtotal)
+        //remove old product
+        const cleanOrder = orders.filter(order => order.id !== orderExist.id)
         //TODO: remove old order product before
-        orders = [...orders, accOrderProduct]
+        //update order list
+        orders = [...cleanOrder, accOrderProduct]
     }else{
         //update order list with selected product
         const newOrderProduct = OrderProduct(product)
@@ -53,7 +58,7 @@ const OrderProduct = (product, amount=1, subtotal=null) => {
         flavors: product.flavors,
         price: 500,
         amount: amount,
-        subtotal: 1000
+        subtotal: subtotal ? subtotal : product.price
     }
 }
 
