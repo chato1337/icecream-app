@@ -5,7 +5,7 @@ const $product = document.querySelector('#product')
 const $order = document.querySelector('#order')
 
 // variables initializacion
-let orders = [] 
+let orders = []
 
 //dom listeners
 $root.addEventListener('click', (event) => {
@@ -56,7 +56,7 @@ const OrderProduct = (product, amount=1, subtotal=null) => {
         name: product.name,
         price: product.price,
         flavors: product.flavors,
-        price: 500,
+        price: product.price,
         amount: amount,
         subtotal: subtotal ? subtotal : product.price
     }
@@ -81,12 +81,12 @@ const genRowTable = (product) => {
 }
 
 const genRowOrder = (orderProduct) => {
-    const {name, price, flavors, amount, subtotal} = orderProduct
+    const {name, price, /* flavors, */ amount, subtotal} = orderProduct
     return(
         `
             <tr>
                 <td>${name}</td>
-                <td>${flavors}</td>
+                <td>flavors</td>
                 <td>${price}</td>
                 <td>${amount}</td>
                 <td>${subtotal}</td>

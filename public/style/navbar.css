@@ -1,0 +1,97 @@
+
+body {
+  margin: 0;
+  font-family: "Comforter Brush", cursive;
+  font-family: "Estonia", cursive;
+  font-family: "Quicksand", sans-serif;
+  background-color: rgb(228, 228, 228);
+}
+.menu-navbar{
+    padding: 24px;
+    background-color: rgb(27, 26, 26);
+    color: white;
+    width: 150px;
+    height: 85vh;
+}
+.menu-navbar a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    /* margin-bottom: 24;
+    display: inline-block; */
+}
+.ul1{
+    padding: 0;
+    margin: 37px 0 0;
+    list-style: none;
+    border-bottom: 1px solid white;
+    width: 120px;
+}
+.ul2{
+    padding: 0;
+    margin: 70px 0 0;
+    list-style: none;
+    border-bottom: 1px solid white;
+    width: 120px;
+}
+.ul3{
+    padding: 0;
+    margin: 35px 0 0;
+    list-style: none;
+}
+
+.menu-navbar ul:nth-child(2){
+    display: inline-block;
+}
+
+.menu-navbar ul li{
+    margin-bottom: 24px;
+}
+.menu-navbar .email{
+    font-size: 14px;
+    font-weight: 300 !important;
+    
+}
+.sign-out{
+    color: greenyellow !important;
+    font-size: 14px;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////// */
+
+#root{
+    display: flex;
+}
+.container{
+    width: 80vh;
+    margin: 14px;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: rgb(252, 243, 240);
+    border: 1px solid black;    
+}
+ .container h1{
+     text-align: center;
+ }
+ .container table{
+     width: 80vh;
+ }
+ .container table, th, td{
+     margin-left: 12px;
+     text-align: center;
+ }
+
+ .container-orders{
+    background-color: rgb(252, 243, 240);
+    border: 1px solid black;
+    margin: 14px;
+    padding: 12px;
+    border-radius: 6px;
+    width: 54vh;
+}
+.container-orders h3{
+    text-align: center;
+}
+.container-orders table{
+    width: 54vh;
+}

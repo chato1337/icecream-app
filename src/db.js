@@ -1,8 +1,8 @@
 export const products = [
     {
         id: 1,
-        name: 'product 1',
-        price: 500,
+        name: 'caja de crema',
+        price: 55000,
         flavors: []
     },
     {
