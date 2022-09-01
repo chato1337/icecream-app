@@ -3,6 +3,7 @@ import { products } from './db';
 const $root = document.querySelector('#root')
 const $product = document.querySelector('#product')
 const $order = document.querySelector('#order')
+const $totalOrder = document.querySelector('#orderTotal')
 
 // variables initializacion
 let orders = []
@@ -44,10 +45,18 @@ const addCart = (id) => {
         const newOrderProduct = OrderProduct(product)
         orders = [...orders, newOrderProduct]
     }
+    const toPay = orders.reduce((prev, current) => {
+        return prev.subtotal ?? 0 + current.subtotal ?? 0
+    }, 0)
+    console.log(toPay)
+    
     //generate dom elements for print in html
     const htmlOrder = orders.map(order => genRowOrder(order)).join('')
-    //render in html
+    //render in html    
     $order.innerHTML = htmlOrder
+
+    $totalOrder.innerHTML = toPay
+      
 }
 
 const OrderProduct = (product, amount=1, subtotal=null) => {

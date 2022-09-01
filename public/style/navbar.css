@@ -95,3 +95,7 @@ body {
 .container-orders table{
     width: 54vh;
 }
+.total-order{
+    display: flex;
+    color: red;
+}
