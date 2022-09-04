@@ -6,12 +6,19 @@ body {
   font-family: "Quicksand", sans-serif;
   background-color: rgb(228, 228, 228);
 }
+#root {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
 .menu-navbar{
     padding: 24px;
     background-color: rgb(27, 26, 26);
     color: white;
-    width: 150px;
-    height: 85vh;
+    width: 17%;
+    height: 100%;
+    box-sizing: border-box;
 }
 .menu-navbar a{
     text-decoration: none;
@@ -25,14 +32,14 @@ body {
     margin: 37px 0 0;
     list-style: none;
     border-bottom: 1px solid white;
-    width: 120px;
+    width: 100%;
 }
 .ul2{
     padding: 0;
     margin: 70px 0 0;
     list-style: none;
     border-bottom: 1px solid white;
-    width: 120px;
+    width: 100%;
 }
 .ul3{
     padding: 0;
@@ -50,7 +57,7 @@ body {
 .menu-navbar .email{
     font-size: 14px;
     font-weight: 300 !important;
-    
+    word-wrap: break-word;    
 }
 .sign-out{
     color: greenyellow !important;
@@ -59,22 +66,26 @@ body {
 
 /* /////////////////////////////////////////////////////////////////////////////////// */
 
-#root{
-    display: flex;
-}
+
 .container{
-    width: 80vh;
+    width: 50%;
     margin: 14px;
     padding: 12px;
     border-radius: 6px;
     background-color: rgb(252, 243, 240);
-    border: 1px solid black;    
+    border: 1px solid black;
+    box-sizing: border-box;   
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
 }
  .container h1{
      text-align: center;
  }
  .container table{
-     width: 80vh;
+     width: 100%;
+     box-sizing: border-box;
  }
  .container table, th, td{
      margin-left: 12px;
@@ -87,15 +98,26 @@ body {
     margin: 14px;
     padding: 12px;
     border-radius: 6px;
-    width: 54vh;
+    width: 33%;
+    box-sizing: border-box;
 }
 .container-orders h3{
     text-align: center;
 }
 .container-orders table{
-    width: 54vh;
+    width: 100%;
 }
 .total-order{
     display: flex;
-    color: red;
+    margin-bottom: 0%;
+}
+.total{
+    height: 24vh;
+    width: 50vh;
+    display: grid;
+    place-content: end;
+}
+.image{
+    width: 100px;
+    object-fit: cover;
 }

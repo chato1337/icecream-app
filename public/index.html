@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable-no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0" />
     <link rel="stylesheet" href="./style/navbar.css" />
+
     <title>My INVENTORy</title>
 </head>
 
@@ -43,7 +44,7 @@
             </ul>
             <ul class="ul3">
                 <li>
-                    <a class="email" href="#">edwinkaycut@gmil.com</a>
+                    <a class="email" href="#">edwinkaycut@gmail.com</a>
                 </li>
                 <li>
                     <a class="sign-out" href="#">Sign out</a>
@@ -57,9 +58,11 @@
                 <thead>
                     <tr>
                         <th>id</th>
-                        <th>name</th>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>unit</th>
+                        <th>unit.S</th>
                         <th>price</th>
-                        <th>flavors</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -67,7 +70,6 @@
             </table>
         </div>
         <div class="container-orders">
-            
             <table>
                 <h3>Orders</h3>
                 <thead>
@@ -81,12 +83,14 @@
                 </thead>
                 <tbody id="order"></tbody>
             </table>
-            <div class="total-order">
-                 <span>total</span>
-                    <span id="orderTotal"></span>
-            </div>
+                <div class="total">
+                    <span><strong>Total:</strong></span>
+                       <span id="orderTotal"></span>                    
+                </div>  
+            
         </div>
     </div>
+    
 
     <script src="./bundle.js"></script>
 </body>

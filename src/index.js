@@ -45,17 +45,22 @@ const addCart = (id) => {
         const newOrderProduct = OrderProduct(product)
         orders = [...orders, newOrderProduct]
     }
-    const toPay = orders.reduce((prev, current) => {
-        return prev.subtotal ?? 0 + current.subtotal ?? 0
-    }, 0)
+    const createSubtotal = orders.map((sub) => sub.subtotal)
+
+    const toPay = createSubtotal.reduce((prev, current) => prev + current, 0)
+    //     const toPay = orders.reduce((prev, current) => {
+    //     console.log(current.subtotal)
+    //     return prev.subtotal ?? 0 + current.subtotal ?? 0
+    // }, 0)
     console.log(toPay)
+    
     
     //generate dom elements for print in html
     const htmlOrder = orders.map(order => genRowOrder(order)).join('')
     //render in html    
     $order.innerHTML = htmlOrder
 
-    $totalOrder.innerHTML = toPay
+    $totalOrder.innerHTML = `$${toPay}`
       
 }
 
@@ -63,8 +68,8 @@ const OrderProduct = (product, amount=1, subtotal=null) => {
     return {
         id: product.id,
         name: product.name,
-        price: product.price,
-        flavors: product.flavors,
+        unit: product.unit,
+        units: product.units,
         price: product.price,
         amount: amount,
         subtotal: subtotal ? subtotal : product.price
@@ -73,14 +78,16 @@ const OrderProduct = (product, amount=1, subtotal=null) => {
 
 //DOM generators
 const genRowTable = (product) => {
-    const {name, price, id} = product
+    const {name, price, id, img, unit, units} = product
     return (
         `
             <tr>
                 <td>${id}</td>
+                <td><img class='image' src="${img}" alt=""></td>
                 <td>${name}</td>
-                <td>${price}</td>
-                <td>flavor list</td>
+                <td>${unit}</td>
+                <td>${units}</td>
+                <td>$${price}</td>
                 <td>
                     <button class="btn-add" id="${id}">add</button>
                 </td>
