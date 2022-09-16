@@ -21,7 +21,7 @@ export const products = [
         unit: 870,
         units: 1500,
         price: 8700,
-        img: "https://static.wixstatic.com/media/2a1695_7ca1d61d39494b97a71c12cdea5372b7~mv2.jpeg/v1/fill/w_363,h_218,al_c,lg_1,q_85/2a1695_7ca1d61d39494b97a71c12cdea5372b7~mv2.webp"
+        img: "https://fryscol.com/wp-content/uploads/2021/10/HC1.png"
     },
     {
         id: 4,
@@ -29,6 +29,31 @@ export const products = [
         unit: 360,
         units: 700,
         price: 3600,
-        img: "https://t2.rg.ltmcdn.com/es/posts/1/1/6/paletas_de_hielo_caseras_43611_600.jpg"
+        img: "http://www.productosricura.com/images/stories/virtuemart/product/PALETA-AGUA-RICURA-FRESA.jpg"
     },
+    {
+        id: 5,
+        name: 'Crema de leche',
+        unit: 0,
+        units: 0,
+        price: 11900,
+        img: "https://sudamerglobal.com/wp-content/uploads/2021/06/Diseno_sin_titulo__3_-removebg-preview-1.png"
+    },
+    {
+        id: 6,
+        name: 'Relleno de fresa',
+        unit: 0,
+        units: 0,
+        price: 6600,
+        img: "https://mundohuevo.com/wp-content/uploads/2021/03/5088.jpg"
+    },
+    {
+        id: 7,
+        name: 'glaseado',
+        unit: 0,
+        units: 0,
+        price: 4200,
+        img: "https://cdn.shopify.com/s/files/1/0290/6724/7709/products/003421_1000x1000.jpg"
+    },    
+    
 ]

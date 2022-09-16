@@ -79,6 +79,7 @@ body {
     flex-direction: column;
     align-content: space-between;
     align-items: center;
+    flex-grow: 4;
 }
  .container h1{
      text-align: center;
@@ -119,5 +120,6 @@ body {
 }
 .image{
     width: 100px;
+    height: 60px;
     object-fit: cover;
 }

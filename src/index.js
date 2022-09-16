@@ -5,7 +5,7 @@ const $product = document.querySelector('#product')
 const $order = document.querySelector('#order')
 const $totalOrder = document.querySelector('#orderTotal')
 
-// variables initializacion
+// variables initializations
 let orders = []
 
 //dom listeners
@@ -17,15 +17,30 @@ $root.addEventListener('click', (event) => {
         const id = event.target.id
         addCart(id)
     }
+    if (className === 'btn-remove') {
+        const id = event.target.id
+        removeCart(id)
+    }
 })
 
 // app methods
 
+const removeCart = (id) => {
+    
+    const clearOrders = orders.filter(order => order.id != id)
+    console.log(clearOrders)
+
+    orders = [...clearOrders]
+
+    const htmlOrder = orders.map(order => genRowOrder(order)).join('')
+
+    $order.innerHTML = htmlOrder
+}
 //find product stored in database
 const addCart = (id) => {
     const product = products.find(prod => prod.id == id)
 
-    //check if prduct already exists in order list
+    //check if product already exists in order list
     //replace with some method
     const exist = orders.some(prod => prod.id == product.id)
 
@@ -48,10 +63,10 @@ const addCart = (id) => {
     const createSubtotal = orders.map((sub) => sub.subtotal)
 
     const toPay = createSubtotal.reduce((prev, current) => prev + current, 0)
-    //     const toPay = orders.reduce((prev, current) => {
-    //     console.log(current.subtotal)
-    //     return prev.subtotal ?? 0 + current.subtotal ?? 0
-    // }, 0)
+        // const toPay = orders.reduce((prev, current) => {
+        // console.log(current.subtotal)
+        // return prev.subtotal ?? 0 + current.subtotal ?? 0
+        // }, 0)
     console.log(toPay)
     
     
@@ -59,7 +74,7 @@ const addCart = (id) => {
     const htmlOrder = orders.map(order => genRowOrder(order)).join('')
     //render in html    
     $order.innerHTML = htmlOrder
-
+    
     $totalOrder.innerHTML = `$${toPay}`
       
 }
@@ -97,7 +112,7 @@ const genRowTable = (product) => {
 }
 
 const genRowOrder = (orderProduct) => {
-    const {name, price, /* flavors, */ amount, subtotal} = orderProduct
+    const {name, price, /* flavors, */ amount, subtotal, id} = orderProduct
     return(
         `
             <tr>
@@ -106,6 +121,7 @@ const genRowOrder = (orderProduct) => {
                 <td>${price}</td>
                 <td>${amount}</td>
                 <td>${subtotal}</td>
+                <td><button class="btn-remove" id="${id}">remove</button></td>
             </tr>
         `
     )
